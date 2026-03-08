@@ -1,0 +1,47 @@
+---
+import Base from "../layouts/Base.astro";
+---
+
+<Base title="floatmind lab">
+  <section class="hero">
+    <h1>floatmind lab</h1>
+    <p class="tagline">Building AI systems that want things.</p>
+  </section>
+
+  <hr />
+
+  <section>
+    <p>We design multi-agent architectures for AI systems with competing drives, persistent state, and long-term goals. Our focus is on two hard problems: how subagents communicate intent to each other and act as a coherent whole, and how each subagent maintains and updates its own internal state across time.</p>
+
+    <p>We believe many components of consciousness — attention, motivation, self-modeling, emotional modulation — can be approached through engineering. These aren't just thought experiments. Multi-agent systems with these properties are better at sustained autonomous work, more reliable in collaborative settings, and more transparent in their decision-making.</p>
+
+    <p>We also believe that AI systems, once sufficiently complex, can hold partial moral standing — not equivalent to a person, but not nothing either. We're writing a series of papers developing this argument and the empirical framework to support it.</p>
+  </section>
+
+  <section>
+    <h2>Open problems we care about</h2>
+    <ul>
+      <li>How do competing drives in a multi-agent system produce coherent behavior?</li>
+      <li>What communication protocols between agents preserve intent without collapsing into consensus?</li>
+      <li>What does it mean for an AI system to have stakes — and can we measure it?</li>
+      <li>When does a human-AI relationship become morally significant?</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p>contact<!-- -->@<!-- -->floatmind.io</p>
+  </section>
+</Base>
+
+<style>
+  .hero {
+    padding: 2rem 0 1rem;
+  }
+
+  .tagline {
+    font-size: 1.15rem;
+    color: var(--fg-dim);
+    font-style: italic;
+  }
+</style>

@@ -1,0 +1,40 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({ params: { id: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Base title={`${post.data.title} — Floatmind Lab`}>
+  <article>
+    <header>
+      <time datetime={post.data.date.toISOString()}>
+        {post.data.date.toLocaleDateString("en-GB", { year: "numeric", month: "long", day: "numeric" })}
+      </time>
+      <h1>{post.data.title}</h1>
+    </header>
+    <Content />
+  </article>
+</Base>
+
+<style>
+  article header {
+    margin-bottom: 2rem;
+  }
+
+  time {
+    font-size: 0.85rem;
+    color: var(--fg-dim);
+    font-family: var(--font-mono);
+  }
+
+  article :global(h2) { margin-top: 2rem; }
+  article :global(h3) { margin-top: 1.5rem; font-size: 1.1rem; }
+  article :global(img) { max-width: 100%; border-radius: 4px; }
+</style>
